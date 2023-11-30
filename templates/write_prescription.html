@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Prescription</title>
+</head>
+<body>
+    <h2>Write Prescription</h2>
+    <form method="post" action="{{ url_for('write_prescription') }}">
+        <label for="doctor_id">Doctor ID:</label>
+        <input type="text" name="doctor_id" required><br>
+        
+        <label for="patient_ID">patient ID:</label>
+        <input type="text" name="patient_ID" required><br>
+
+        <label for="presc_ID">prescription ID:</label>
+        <input type="text" name="presc_ID" required><br>
+        
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" name="diagnosis" required><br>
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" ><br>
+
+        <label for="medicines">Medicines:</label>
+        <textarea name="medicines" rows="4" required></textarea><br>
+
+        <label for="admit">Admit:</label>
+        <select name="admit">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <br>
+
+        <button type="submit">Submit Prescription</button>
+    </form>
+
+    <a href="{{url_for('d_index')}}">Back</a> 
+</body>
+</html>

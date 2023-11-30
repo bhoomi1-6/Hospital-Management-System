@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Bill</title>
+</head>
+<body>
+    <h2>Generate Bill</h2>
+    <form method="post" action="{{ url_for('generate_bill') }}">
+        <label for="patient_ID">Patient ID:</label>
+        <input type="text" id="patient_ID" name="patient_ID" required>
+        <button type="submit">Generate Bill</button>
+    </form>
+</body>
+</html>
+

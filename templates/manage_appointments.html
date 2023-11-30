@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments</title>
+</head>
+<body>
+    <h2>Manage Appointments</h2>
+    <table border="1">
+        <tr>
+            <th>Appointment Number</th>
+            <th>Patient Name</th>
+            <th>Patient ID</th>
+            <th>Doctor Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for appointment, status, patient in appointments %}
+            <tr>
+                <td>{{ appointment.apt_Number }}</td>
+                <td>{{ patient.patient_Name }}</td>
+                <td>{{patient.patient_ID}}</td>
+                <td>{{ appointment.doctor.doctor_name }}</td>
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.Time }}</td>
+                <td>{{ status.status }}</td>
+                <td>
+                    <a href="{{ url_for('confirm_cancel_appointment', apt_number=appointment.apt_Number, status='Confirm') }}">Confirm</a> /
+                    <a href="{{ url_for('confirm_cancel_appointment', apt_number=appointment.apt_Number, status='Cancel') }}">Cancel</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{url_for('d_index')}}">Back</a>  
+
+</body>
+</html>

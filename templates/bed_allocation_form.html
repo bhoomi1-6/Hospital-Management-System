@@ -1,0 +1,43 @@
+<!-- templates/bed_allocation_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Allocation</title>
+</head>
+<body>
+
+  <h1>Bed Allocation Form</h1>
+
+  <form method="post" action="{{ url_for('bed_allocation',presc_ID=prescription.presc_ID) }}">
+    <label for="presc_id">Select Prescription:</label>
+    <select name="presc_id" required>
+        {% for prescription in prescriptions %}
+            <option value="{{ prescription.presc_ID }}">{{ prescription.presc_ID }}</option>
+        {% endfor %}  </select>
+
+    
+        <label for="bed_type">Bed Type:</label>
+        <select name="bed_type">
+          <option value="Single">Single</option>
+          <option value="Double">Double</option>
+    </select>
+    <br>
+
+    <label for="instructions">Instructions:</label>
+    <textarea name="instructions" rows="4" cols="50" placeholder="Enter any specific instructions or notes"></textarea>
+    <br>
+
+    <button type="submit">Allocate Bed</button>
+  </form>
+  {% include 'allocated_bed_info.html' %}
+
+  <a href="{{url_for('p_index')}}">Back</a> 
+
+  <!-- Other content of the bed allocation form -->
+
+</body>
+</html>

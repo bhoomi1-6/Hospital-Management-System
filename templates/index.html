@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Hospital Management System</h1>
+        <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+    </nav>
+
+    <div class="container">
+        <div class="outer">
+            <div class="border">
+                <div class="header">
+                    <h1 class="word">Index</h1>
+                </div>
+
+                <h1 class="bottom">
+                    Hi, {{ session.ID }}!!
+                    <br><br>
+                    Welcome to the index page...
+                </h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

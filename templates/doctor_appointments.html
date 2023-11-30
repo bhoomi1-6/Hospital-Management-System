@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointments</title>
+</head>
+<body>
+    <h1>Doctor Appointments</h1>
+    <ul>
+        {% for appointment in appointments %}
+            <li>
+                Appointment with {{ appointment.patient.username }} on {{ appointment.date }} at {{ appointment.Time }}
+                {% if appointment.status == 'Pending' %}
+                    <form method="post" action="{{ url_for('confirm_appointment', apt_number=appointment.apt_Number) }}">
+                        <input type="submit" value="Confirm">
+                    </form>
+                    <form method="post" action="{{ url_for('cancel_appointment', apt_number=appointment.apt_Number) }}">
+                        <input type="submit" value="Cancel">
+                    </form>
+                {% else %}
+                    Status: {{ appointment.status }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

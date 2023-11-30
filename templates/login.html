@@ -1,0 +1,67 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Login </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">		 
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container">
+				<h1 class="logo">Hospital Management System</h1>
+			</div>
+		</nav>
+		<div class="outer">
+		<div  class="border">
+			<div class="header">
+				<h1 class="word">Admin Login</h1>
+			</div></br></b	r></br>
+			<h2 class="word">
+				<form action="{{ url_for('login') }}" method="post">
+				<div class="msg">{{ msg }}</div>
+					<input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+					<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+					<input type="submit" class="btn" value="Sign In"></br></br>
+				</form>
+			</h2>
+			<p class="bottom">Don't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+		</div>
+		</div>
+<!--PATIENT LOGIN-->
+		<div class="outer">
+			<div  class="border">
+				<div class="header">
+					<h1 class="word">Patient Login</h1>
+				</div></br></b	r></br>
+				<h2 class="word">
+					<form action="{{ url_for('plogin') }}" method="post">
+					<div class="msg">{{ msg }}</div>
+						<input id="username" name="username" type="text" placeholder="Enter Your Patient username" class="textbox"/></br></br>
+						<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+						<input type="submit" class="btn" value="Sign In"></br></br>
+					</form>
+				</h2>
+				<p class="bottom">Don't have an account? <a class="bottom" href="{{url_for('patient_info')}}"> Sign Up here</a></p>
+			</div>
+			</div>
+
+<!--Doctor Login-->
+<div class="outer">
+	<div  class="border">
+		<div class="header">
+			<h1 class="word">Doctor Login</h1>
+		</div></br></b	r></br>
+		<h2 class="word">
+			<form action="{{ url_for('dlogin') }}" method="post">
+			<div class="msg">{{ msg }}</div>
+				<input id="ID" name="ID" type="text" placeholder="Enter Your Doctor ID" class="textbox"/></br></br>
+				<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br></br>
+				<input type="submit" class="btn" value="Sign In"></br></br>
+			</form>
+		</h2>
+		<p class="bottom">Don't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+	</div>
+	</div>
+	</body>
+</html>

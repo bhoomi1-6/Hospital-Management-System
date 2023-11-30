@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Generated</title>
+</head>
+<body>
+    <h2>Bill Generated</h2>
+    <p>Patient Name: {{ patient.patient_Name }}</p>
+    <p>Patient ID: {{ patient.patient_ID }}</p>
+    <p>Total Bill Amount: {{ bill.Bill_Amount }}</p>
+    <!-- Add more details as needed -->
+    <a href="{{ url_for('generate_bill') }}">Generate Another Bill</a><br>
+    <a href="{{ url_for('p_index') }}">Back</a>
+</body>
+</html>

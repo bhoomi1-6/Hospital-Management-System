@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Update Doctor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_doctor.css') }}">
+</head>
+<body>
+<h1>Update Doctor Name</h1>
+<form action="{{ url_for('update_doctor') }}" method="post">
+    <label for="doctor_id">Doctor ID:</label>
+    <input type="number" id="doctor_id" name="doctor_id" required>
+    <label for="new_name">New Name:</label>
+    <input type="text" id="new_name" name="new_name" required>
+    <input type="submit" value="Update Name">
+</form>
+</body>
+</html>

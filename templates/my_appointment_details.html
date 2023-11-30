@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Appointment Details</title>
+</head>
+<body>
+    <h1>My Appointment Details</h1>
+    <p>Patient ID: {{ patient.patient_ID }}</p>
+    <p>Patient Name: {{ patient.patient_Name }}</p>
+    <p>Appointment Number: {{ appointment.apt_Number }}</p>
+    <p>Date: {{ appointment.date }}</p>
+    <p>Time: {{ appointment.Time }}</p>
+    <p>Status: {{ status }}</p>
+
+    <a href="{{url_for('p_index')}}">Back</a> 
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+</head>
+<body>
+    <h2>Schedule Appointment</h2>
+    <form method="post" action="{{ url_for('schedule_appointment') }}">
+        <label for="doctor_id">Select Doctor:</label>
+        <select name="doctor_id" required>
+            {% for doctor in doctors %}
+                <option value="{{ doctor.doctor_id }}">{{ doctor.doctor_name }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="date">Select Date:</label>
+        <input type="date" name="date" required><br>
+        <label for="time">Select Time:</label>
+        <input type="time" name="time" required><br>
+        <input type="submit" value="Schedule Appointment">
+        <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+    </form>
+    <p>{{ msg }}</p>
+</body>
+</html>

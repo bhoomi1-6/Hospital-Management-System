@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_admin_index.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Hospital Management System</h1>
+        <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+    </nav>
+   <!-- <h1>Patients</h1>
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient }}</li>
+        {% endfor %}
+    </ul> -->
+
+    
+    <a href="{{ url_for('admin_index') }}">Display Doctors present</a>
+
+   
+    <ul>
+        {% for doctor in doctors %}
+            <li>
+                Doctor ID: {{ doctor.doctor_id }} - Name: {{ doctor.doctor_name }} Specialisation: {{doctor.specialisation}}
+                <a href="{{ url_for('delete_doctor', doctor_id=doctor.doctor_id) }}">Delete</a>
+                <!-- You can add more details or options for each doctor -->
+            </li>
+        {% endfor %}
+    </ul>
+  
+    <a href="{{ url_for('add_doctor') }}">Add Doctor</a>
+    <a href="{{ url_for('update_doctor_form') }}">Update Doctor</a>
+    <a href="{{ url_for('generate_bill') }}">Generate Bill</a>
+    <a href="{{ url_for('get_total_bill_revenue') }}">Procedure : total bill revenue</a>
+    <a href="{{ url_for('pop_doc') }}">Procedure : Most popular Doctor </a>
+    <a href="{{ url_for('admitted') }}">Aggregate: Admitted Patients  </a>
+    <a href="{{ url_for('pdt') }}">Patient appointment date and time  </a>
+    <a href="{{ url_for('bed_info') }}">Nested Q : Allocated Bed Info  </a>
+
+
+
+
+</body>
+</html>

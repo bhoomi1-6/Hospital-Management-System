@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Allocation</title>
+</head>
+<body>
+    <h1>Bed Allocation</h1>
+    <p>Welcome, {{ patient.patient_Name }}!</p>
+    <p>Select a bed for your allocation:</p>
+    <ul>
+        {% for bed in beds %}
+            <li>
+                Bed ID: {{ bed.BedID }}
+                <a href="{{ url_for('allocate_bed', bed_id=bed.BedID) }}">Allocate</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Hospital Management System</h1>
+        <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+    </nav>
+
+    <div class="container">
+        <div class="outer">
+            <div class="border">
+                <div class="header">
+                    <h1 class="word">Index</h1>
+                </div>
+
+                <h1 class="bottom">
+    
+                
+                <a href="{{ url_for('p_index') }}">Display Available Doctors present</a><br>
+                <a href="{{ url_for('book_appointment') }}">Book Appointment</a><br>
+             <a href="{{ url_for('my_appointment_details') }}">My Appointment Details</a><br>
+             <a href="{{ url_for('p_index_pres') }}">My Prescription</a> <br> 
+
+             {% for prescription in prescriptions %}
+            
+             <a style=" font-size: 10px;" href="{{ url_for('bed_allocation', presc_ID=prescription.presc_ID) }}">Bed Allocation for Presc_ID: {{ prescription.presc_ID }}</a>
+             <br>
+         {% endfor %}
+
+                
+    
+            </h1>
+                <ul>
+                    {% for doctor in doctors %}
+                        <li>
+                            Doctor ID: {{ doctor.doctor_id }} - Name: {{ doctor.doctor_name }} Specialisation: {{doctor.specialisation}}
+                        </li>
+                    {% endfor %}
+                </ul>
+              
+            </div>
+            <h2>Your Prescriptions:</h2>
+
+            {% if prescriptions %}
+              <ul>
+                {% for prescription in prescriptions %}
+                  <li>
+                    <strong>Prescription ID:</strong> {{ prescription.presc_ID }}<br>
+                    <strong>Diagnosis:</strong> {{ prescription.diagnosis }}<br>
+                    <strong>Description:</strong> {{ prescription.description }}<br>
+                    <strong>Medicines:</strong>
+                    <ul>
+                      {% for medicine in prescription_medicines[prescription.presc_ID] %}
+                        <li>{{ medicine.medicines }}</li>
+                      {% endfor %}
+                    </ul>
+                    <hr>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>No prescriptions available.</p>
+            {% endif %}
+        
+
+
+
+        </div>
+    </div>
+</body>
+</html>

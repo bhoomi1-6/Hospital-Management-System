@@ -1,0 +1,101 @@
+
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Style the container */
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Style each login section */
+.login-section {
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header style */
+.header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Center the h1 element */
+.header h1 {
+    margin: 0;
+}
+
+/* Form input styles */
+form {
+    padding: 20px;
+    text-align: center;
+}
+
+.msg {
+    color: red;
+}
+
+.textbox {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    width: 40%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.bottom a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #082c44;
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+}
+
+.navbar .outer {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.navbar .logo {
+    margin: 0;
+}
